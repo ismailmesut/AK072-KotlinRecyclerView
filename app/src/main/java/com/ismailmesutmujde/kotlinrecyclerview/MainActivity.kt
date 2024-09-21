@@ -3,6 +3,7 @@ package com.ismailmesutmujde.kotlinrecyclerview
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.ismailmesutmujde.kotlinrecyclerview.databinding.ActivityMainBinding
 
 
@@ -20,7 +21,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
 
         bindingMain.recyclerView.setHasFixedSize(true)
-        bindingMain.recyclerView.layoutManager = LinearLayoutManager(this)
+
+        // Changing view in RecyclerView
+        //bindingMain.recyclerView.layoutManager = LinearLayoutManager(this)
+        bindingMain.recyclerView.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+        //bindingMain.recyclerView.layoutManager = StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.HORIZONTAL)
 
         val c1 = Countries(1,"Türkiye")
         val c2 = Countries(2,"Italy")
